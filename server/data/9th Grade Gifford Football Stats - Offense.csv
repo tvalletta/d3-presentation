@@ -1,0 +1,154 @@
+Play,Direction,QB,Running,Runner,Passing,Reciever,Points,Game,,,,,,
+?,,Niccum,3,Barjenbruch,,,,Scrimmage #1,,3,0,0,0,0
+?,,Niccum,1,Barjenbruch,,,,Scrimmage #1,,1,0,0,0,0
+?,,Niccum,5,Barjenbruch,,,,Scrimmage #1,,5,0,0,0,0
+?,,Niccum,0,Barjenbruch,,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,9,Barjenbruch,,,,Scrimmage #1,,9,0,0,0,0
+?,,Niccum,8,Barjenbruch,,,,Scrimmage #1,,8,0,0,0,0
+?,,Niccum,2,Barjenbruch,,,,Scrimmage #1,,2,0,0,0,0
+?,,Niccum,9,Barjenbruch,,,,Scrimmage #1,,9,0,0,0,0
+?,,Niccum,16,Barjenbruch,,,,Scrimmage #1,,16,0,0,0,0
+?,,Niccum,0,Johns,,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,5,Johns,,,,Scrimmage #1,,5,0,0,0,0
+?,,Niccum,3,Niccum,,,,Scrimmage #1,,3,0,0,0,0
+?,,Niccum,2,Russell,,,,Scrimmage #1,,2,0,0,0,0
+?,,Niccum,6,Mower,,,,Scrimmage #1,,6,0,0,0,0
+?,,Niccum,9,Mower,,,,Scrimmage #1,,9,0,0,0,0
+?,,Niccum,0,Mower,,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,0,Mower,,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,3,Mower,,,,Scrimmage #1,,3,0,0,0,0
+?,,Niccum,12,W. Gifford,,,,Scrimmage #1,,12,0,0,0,0
+?,,Niccum,,,12,Barry,,Scrimmage #1,,12,0,0,0,0
+?,,Niccum,,,15,Barry,,Scrimmage #1,,15,0,0,0,0
+?,,Niccum,,,19,Clark,,Scrimmage #1,,19,0,0,0,0
+?,,Niccum,,,58,Clark,6,Scrimmage #1,,58,0,0,0,0
+?,,Niccum,,,14,Copeland,,Scrimmage #1,,14,0,0,0,0
+?,,Niccum,,,12,Copeland,,Scrimmage #1,,12,0,0,0,0
+?,,Niccum,,,10,Copeland,,Scrimmage #1,,10,0,0,0,0
+?,,Niccum,,,25,Copeland,,Scrimmage #1,,25,0,0,0,0
+?,,Niccum,,,58,Russell,6,Scrimmage #1,,58,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+?,,Niccum,,,incomplete,,,Scrimmage #1,,0,0,0,0,0
+Read Pass,,Niccum,-5,,,,,Scrimmage #2,,0,-5,0,0,0
+Double Tight Quick Slant,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+24 Gut,,Niccum,5,Barjenbruch,,,,Scrimmage #2,,0,5,0,0,0
+Romeo,,Niccum,1,Barjenbruch,,,,Scrimmage #2,,0,1,0,0,0
+Fake 24 Reverse,,Niccum,3,Russell,,,,Scrimmage #2,,0,3,0,0,0
+Fake 24 Read Pass,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+Romeo,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+Romeo,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+28 Sweep,,Niccum,6,Barjenbruch,,,,Scrimmage #2,,0,6,0,0,0
+27,,Niccum,15,Barjenbruch,,,,Scrimmage #2,,0,15,0,0,0
+27 I,,Niccum,-2,Barjenbruch,,,,Scrimmage #2,,0,-2,0,0,0
+24 Gut,,Niccum,3,Barjenbruch,,,,Scrimmage #2,,0,3,0,0,0
+Read Pass,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+Double Stack,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+Double Stack,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+23 Gut,,Niccum,-3,Johns,,,,Scrimmage #2,,0,-3,0,0,0
+61,,Niccum,-3,W. Gifford,,,,Scrimmage #2,,0,-3,0,0,0
+Read Pass,,Niccum,,,incomplete,,,Scrimmage #2,,0,0,0,0,0
+?,,Niccum,,,40,Clark,6,Scrimmage #2,,0,40,0,0,0
+24 Read Pass,Mid,Niccum,,,19,Clark,,Game 1 - PG,,0,0,19,0,0
+24 Gut,Mid,Niccum,0,Johns,,,,Game 1 - PG,,0,0,0,0,0
+24 Read Gut,Right,Niccum,9,Niccum,,,,Game 1 - PG,,0,0,9,0,0
+Double Tight Read Pass,Left,Niccum,,,incomplete,Barry,,Game 1 - PG,,0,0,0,0,0
+24 Gut,Right,Niccum,-2,Johns,,,,Game 1 - PG,,0,0,-2,0,0
+28 Sweep,Right,Niccum,9,Johns,,,,Game 1 - PG,,0,0,9,0,0
+28 Sweep,Left,Niccum,10,Barjenbruch,,,,Game 1 - PG,,0,0,10,0,0
+Double Wheel Pass,Right,Niccum,-2,Barjenbruch,,,,Game 1 - PG,,0,0,-2,0,0
+24 Gut Read Pass,Right,Niccum,,,13,Clark,6,Game 1 - PG,,0,0,13,0,0
+24 Gut Read Pass,Right,Niccum,,,7,Copeland,,Game 1 - PG,,0,0,7,0,0
+24 Gut,Right,Niccum,4,Tella,,,,Game 1 - PG,,0,0,4,0,0
+24 Gut,Right,Niccum,0,Tella,,,,Game 1 - PG,Fumble,0,0,0,0,0
+Read Pass,Right,Niccum,,,9,Clark,,Game 1 - PG,,0,0,9,0,0
+24 Wheel,Right,Niccum,,,0,Johns,,Game 1 - PG,Fumble,0,0,0,0,0
+24 Gut Read Pass,Right,Niccum,,,39,Clark,,Game 1 - PG,,0,0,39,0,0
+24 Wheel,Right,Niccum,,,12,Clark,6,Game 1 - PG,,0,0,12,0,0
+Double Stack,Left,Niccum,,,0,Christofferson,,Game 1 - PG,Called Back (flag),0,0,0,0,0
+24 Wheel,Mid,Niccum,8,Niccum,,,,Game 1 - PG,,0,0,8,0,0
+24 Wheel,Right,Niccum,6,Bargenbruch,,,6,Game 1 - PG,,0,0,6,0,0
+Double Stack,Right,Niccum,,,,Morgan,,Game 1 - PG,Interception,0,0,0,0,0
+24 Read,Right,Niccum,,,incomplete,MacPherson,,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Center,Niccum,,,incomplete,Clark,,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Right,Niccum,,,incomplete,Clark,,Game 2 - Lehi,,0,0,0,0,0
+24 Read,Center,Niccum,,,incomplete,Clark,,Game 2 - Lehi,,0,0,0,0,0
+Double Stack ,Left,Niccum,3,Wilson,,,,Game 2 - Lehi,,0,0,0,0,0
+38 Sweep,Right,Niccum,-1,Wilson,,,,Game 2 - Lehi,,0,0,0,0,0
+23 Gut,Center,Niccum,5,Wilson,,,,Game 2 - Lehi,,0,0,0,0,0
+24 Read,Left,Niccum,7,Barjenbruch,,,,Game 2 - Lehi,,0,0,0,0,0
+Juliet,Right,Niccum,7,Mower,,,,Game 2 - Lehi,,0,0,0,0,0
+Juliet,Right,Niccum,2,Wilson,,,,Game 2 - Lehi,,0,0,0,0,0
+47,Left,Niccum,7,Barjenbruch,,,,Game 2 - Lehi,,0,0,0,0,0
+Double Wheel,Left,Niccum,,,incomplete,Wilson,,Game 2 - Lehi,(+) PI,0,0,0,0,0
+Double Stack,Right,Niccum,,,incomplete,Barjenbruch,,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Center,Niccum,,,,,,Game 2 - Lehi,Sack,0,0,0,0,0
+Double Wide,Left,Niccum,,,3,Copeland,6,Game 2 - Lehi,,0,0,0,0,0
+I 34 Gut,Right,Niccum,2,Johns,,,,Game 2 - Lehi,,0,0,0,0,0
+Fly Sweep,Left,Niccum,19,MacPherson,,,6,Game 2 - Lehi,,0,0,0,0,0
+Extra Point,Right,Niccum,3,Niccum,,,2,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Left,Niccum,,,incomplete,Copeland,,Game 2 - Lehi,,0,0,0,0,0
+Romeo,Right,Niccum,,,27,MacPherson,6,Game 2 - Lehi,,0,0,0,0,0
+?,Center,Niccum,,,incomplete,Wilson,,Game 2 - Lehi,(+) PI,0,0,0,0,0
+Double Stack,Right,Niccum,,,39,MacPherson,,Game 2 - Lehi,,0,0,0,0,0
+Full back delay,Right,Niccum,6,Barjenbruch,,,6,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Right,Niccum,5,Barjenbruch,,,,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Left,Niccum,,,incomplete,MacPherson,,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Left,Niccum,,,40,Johns,6,Game 2 - Lehi,,0,0,0,0,0
+Double Stack,Right,Niccum,,,,Clark,,Game 2 - Lehi,Interception,0,0,0,0,0
+Draw,Right,Niccum,,,-4,Barjenbruch,,Game 2 - Lehi,(+) Roughing,0,0,0,0,0
+Double Tight,Right,Niccum,,,incomplete,MacPherson,,Game 2 - Lehi,,0,0,0,0,0
+Double Tight,Right,Niccum,3,Barjenbruch,,,,Game 2 - Lehi,,0,0,0,0,0
+24 Read Pass,,Niccum,-20,Niccum,,,,Game 3 - LP,,0,0,0,0,0
+24 Read Pass,,Niccum,,,incomplete,Clark,,Game 3 - LP,,0,0,0,0,0
+Double Stack,,Niccum,,,incomplete,MacPherson,,Game 3 - LP,,0,0,0,0,0
+Wishbone,,Niccum,6,Wilson,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Right,Niccum,4,Wilson,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Left,Niccum,0,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,,Niccum,,,12,Clark,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Left,Niccum,-10,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+Pistol,Center,Niccum,10,Wilson,,,,Game 3 - LP,,0,0,0,0,0
+24 Read,Right,Niccum,,,incomplete,Johns,,Game 3 - LP,,0,0,0,0,0
+Double Stack,,Niccum,-7,,,,,Game 3 - LP,,0,0,0,0,0
+Air Force,Right,Niccum,,,incomplete,MacPherson,,Game 3 - LP,,0,0,0,0,0
+Air Force,Right,Niccum,,,incomplete,MacPherson,,Game 3 - LP,,0,0,0,0,0
+26 Sweep,Right,Niccum,-1,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Right,Niccum,2,Wilson,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Right,Niccum,,Wilson,,,,Game 3 - LP,Fumble,0,0,0,0,0
+Wishbone,Center,Niccum,10,Johns,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Center,Niccum,-3,Tella,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Right,Niccum,,,13,Clark,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Center,Niccum,3,Tella,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Right,Niccum,7,Johns,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Right,Niccum,5,Johns,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Center,Niccum,1,Johns,,,6,Game 3 - LP,,0,0,0,0,0
+Pistol,Left,Barray,,,5,Niccum,2,Game 3 - LP,,0,0,0,0,0
+Pistol,Right,Niccum,,,incomplete,MacPherson,,Game 3 - LP,,0,0,0,0,0
+Trick,Right,Niccum,,,incomplete,MacPherson,,Game 3 - LP,(+) PI,0,0,0,0,0
+Trick,Right,Niccum,,,15,MacPherson,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Left,Niccum,7,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+28 Sweep,Right,Niccum,9,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+27 Sweep,Center,Niccum,4,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+Special K,Center,Niccum,,,incomplete,Clark,,Game 3 - LP,,0,0,0,0,0
+Special K,,Niccum,3,Niccum,,,,Game 3 - LP,,0,0,0,0,0
+24 Gut,Center ,Niccum,-1,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+28 Sweep,Right,Niccum,20,MacPherson,,,,Game 3 - LP,,0,0,0,0,0
+27 Sweep,Left,Niccum,3,Barjenbruch,,,,Game 3 - LP,,0,0,0,0,0
+Wishbone,Right,Niccum,,,6,Clark,,Game 3 - LP,,0,0,0,0,0
+Pistol,Center ,Niccum,,,7,Clark,6,Game 3 - LP,,0,0,0,0,0
+Air Force,Right,Niccum,,,5,MacPherson,2,Game 3 - LP,,0,0,0,0,0
+Air Force,Right,Niccum,,,8,MacPherson,,Game 3 - LP,,0,0,0,0,0
+Air Force,Center ,Niccum,-4,Niccum,,,,Game 3 - LP,,0,0,0,0,0
+Air Force,,Niccum,-20,Niccum,,,,Game 3 - LP,,0,0,0,0,0
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,316,60,141,0,
+,,,,,,,,,,Scrimmage #1 Total Yards,Scrimmage #2 Total Yards,Game 1 - PG Total Yards,Game 2 - Lehi Total Yards,

@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Example 008 - D3 transition tween</title>
+    <style>
+        * { color: gray; font: 18pt arial, sans serif }
+
+        svg {
+            stroke: gray;
+            stroke-width: 3;
+        }
+
+        rect {
+            fill: whitesmoke;
+        }
+
+        circle {
+            fill: white;
+        }
+    </style>
+    <script type='text/javascript' src='js/lib/d3.v3.js'></script>
+</head>
+<body>
+<div id="demo"></div>
+<script>
+    var dataset = [20, 40, 60, 80, 100];
+
+    var svg = d3.select('#demo')
+            .append('svg')
+            .attr('width', 500)
+            .attr('height', 100);
+
+    svg.append('rect')
+            .attr('x', 1)
+            .attr('y', 1)
+            .attr('width', 498)
+            .attr('height', 98);
+
+    svg.append('circle')
+            .attr('r', 1)
+            .attr('cx', 50)
+            .attr('cy', 50);
+
+    svg.append('circle')
+            .attr('r', 1)
+            .attr('cx', 150)
+            .attr('cy', 50);
+
+
+    function dataBind() {
+        svg.selectAll('circle')
+                .data(dataset)
+            .enter().append('circle');
+
+        redraw();
+        continuous();
+    }
+
+    function redraw() {
+        svg.selectAll('circle')
+                .data(dataset)
+            .transition()
+                .duration(750)
+                .attr('r', function(d) { return 40 * (d / 100) })
+                .attr('cx', function(d, i) { return 50 + (i * 100) })
+                .attr('cy', 50);
+    }
+
+    /**
+     * Randomly generate new data and transition the object to the
+     * new data every second
+     */
+    function continuous() {
+        setInterval(function() {
+            for (var i = 0; i < 5; ++i) {
+                dataset[i] = Math.random() * 100;
+            }
+            redraw();
+        }, 1000);
+    }
+
+    setTimeout(dataBind, 1000);
+</script>
+</body>
+</html>

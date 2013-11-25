@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Example 002 - SVG Shapes CSS</title>
+        <style>
+            svg {
+                stroke: gray;
+                stroke-width: 3;
+            }
+
+            rect {
+                fill: whitesmoke;
+            }
+
+            circle {
+                fill: white;
+            }
+        </style>
+        <script type='text/javascript' src='js/lib/d3.v3.js'></script>
+    </head>
+    <body>
+        <div id='demo'></div>
+        <script>
+            var svg = d3.select('#demo')
+                    .append('svg')
+                    .attr('width', 100)
+                    .attr('height', 100);
+
+            svg.append('rect')
+                    .attr('x', 1)               // Upper Left X Coordinate
+                    .attr('y', 1)               // Upper Left Y Coordinate
+                    .attr('width', 98)          // Width
+                    .attr('height', 98);        // Height
+
+            svg.append('circle')
+                    .attr('r', 40)              // Radius
+                    .attr('cx', 50)             // Center X Coordinate
+                    .attr('cy', 50);            // Center Y Coordinate
+        </script>
+    </body>
+</html>
