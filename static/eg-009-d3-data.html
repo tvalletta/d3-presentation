@@ -22,18 +22,19 @@
 <body>
 <div id="demo"></div>
 <script>
-    var dataset = [20, 40, 60, 80, 100];
+    var dataset = [60, 52, 44, 36, 28];
 
     var svg = d3.select('#demo')
             .append('svg')
-            .attr('width', 500)
-            .attr('height', 100);
+            .attr('width', 100)
+            .attr('height', 500);
 
     svg.append('rect')
             .attr('x', 1)
             .attr('y', 1)
-            .attr('width', 498)
-            .attr('height', 98);
+            .attr('width', 98)
+            .attr('height', 498)
+            .on('mousedown', fix);
 
     svg.append('circle')
             .attr('r', 40)
@@ -45,34 +46,20 @@
             .attr('cx', 150)
             .attr('cy', 50);
 
-    function dataBind() {
-        /**
-         * Enter is strange (comes from stage terminology)
-         *
-         * 1. It creates a new chain because it returns an enter object and not
-         * the original selection
-         *
-         * 2. For every piece of data that exists in the dataset the chained
-         * functions are run.  Because they are chained to the enter object
-         * and not the selection they only run on objects "entering the stage"
-         */
+    function fix() {
         svg.selectAll('circle')
                 .data(dataset)
-            .enter().append('circle')
+            .transition()
                 /**
                  * Attributes can take either a static value or a function
                  * that receives the dataset value (datum) and dataset index.
                  * This function is commonly used to set layout, size or
                  * color based on the associated data.
                  */
-                .attr('r', function(d) { return 40 * (d / 100) })
-                .attr('cx', function(d, i) { return 50 + (i * 100) })
-                .attr('cy', 50);
+                .attr('r', function(d) { return d })
+                .attr('cx', 50)
+                .attr('cy', function(d, i) { return 50 + (i * 100) });
     }
-
-    setTimeout(dataBind, 2000);
-
-
 </script>
 </body>
 </html>

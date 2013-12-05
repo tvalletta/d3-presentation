@@ -235,6 +235,18 @@ a:focus {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Oxygen';
+    src: url('font/oxygen/Oxygen-webfont.eot');
+    src: url('font/oxygen/Oxygen-webfont.eot?#iefix') format('embedded-opentype'),
+    url('font/oxygen/Oxygen-webfont.woff') format('woff'),
+    url('font/oxygen/Oxygen-webfont.ttf') format('truetype'),
+    url('font/oxygen/Oxygen-webfont.svg#OxygenRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 h1 {font-size: 128px; line-height: 128px; color: rgb(0, 0, 0); font-family: 'avenir';}
 h2 {font-size: 96px; line-height: 96px; color: rgb(92, 131, 198);}
 h3 {font-size: 64px; line-height: 64px; color: rgb(92, 131, 198);}

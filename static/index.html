@@ -3,161 +3,1481 @@
     <head>
         <title>D3</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="author" content="Thomas A. Valletta" />
-        <link href="css/impress.css" rel="stylesheet" />
-        <link href="css/prettify.css" rel="stylesheet" />
-        <link href="css/presentation.css" rel="stylesheet" />
+        <meta name="author" content="Thomas A. Valletta"/>
+        <link href="css/impress.css" rel="stylesheet"/>
+        <link href="css/prettify.css" rel="stylesheet"/>
+        <link href="css/presentation.css" rel="stylesheet"/>
         <script type="text/javascript" src='js/jquery-1.8.2.min.js'></script>
+        <script type='text/javascript' src='js/lib/d3.v3.js'></script>
+        <script type='text/javascript'
+                src='js/lib/crossfilter.min.js'></script>
         <script type="text/javascript" src='js/prettify.js'></script>
+        <style>
+            .demo svg {
+                stroke: gray;
+                stroke-width: 10;
+            }
+
+            .demo rect {
+                fill: whitesmoke;
+            }
+
+            .demo circle {
+                fill: white;
+            }
+        </style>
     </head>
     <body onload='prettyPrint()'>
-		<p class="fallback-message">
-		    Your browser doesn't support impress.js.  Try Chrome or Safari.
-		</p>
-		<div class="help">
-			<h3>Need Help?</h3>
-			<h6>Use the arrow keys move forward and back.</h6>
-		</div>
-		<div id="impress">
+        <p class="fallback-message">
+            Your browser doesn't support impress.js. Try Chrome or Safari.
+        </p>
 
-			<div id="title" class="step" data-x="-92" data-y="-1200" data-z="0">
-                <h1>D3</h1>
-			</div>
+        <div class="help">
+            <h3>Need Help?</h3>
+            <h6>Use the arrow keys move forward and back.</h6>
+        </div>
+        <div id="impress">
 
-      <!-- Outline -->
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            BEGIN SLIDES
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+
+            <div id="title" class="step clarify" data-x="0" data-y="0"
+                 data-z="0">
+                <svg id="d3logo" width="96" height="91"
+                     style="position:relative;top:22px;">
+                    <linearGradient id="logo-gradient-1" gradientUnits="userSpaceOnUse"
+                                    x1="37.2417" y1="7.0552" x2="97.9669" y2="67.7803">
+                        <stop offset="0" stop-color="#F9A03C"></stop>
+                        <stop offset="1" stop-color="#F7974E"></stop>
+                    </linearGradient>
+                    <linearGradient id="logo-gradient-2" gradientUnits="userSpaceOnUse"
+                                    x1="-8.0391" y1="17.2148" x2="45.724" y2="70.978">
+                        <stop offset="0" stop-color="#F9A03C"></stop>
+                        <stop offset="1" stop-color="#F7974E"></stop>
+                    </linearGradient>
+                    <linearGradient id="logo-gradient-3" gradientUnits="userSpaceOnUse"
+                                    x1="11.9321" y1="36.5513" x2="66.3901" y2="91.0092">
+                        <stop offset="0" stop-color="#F9A03C"></stop>
+                        <stop offset="1" stop-color="#F7974E"></stop>
+                    </linearGradient>
+                    <linearGradient id="logo-gradient-4" gradientUnits="userSpaceOnUse"
+                                    x1="1.6533" y1="-1.6533" x2="86.899" y2="83.5924">
+                        <stop offset="0" stop-color="#F26D58"></stop>
+                        <stop offset="1" stop-color="#F9A03C"></stop>
+                    </linearGradient>
+                    <linearGradient id="logo-gradient-5" gradientUnits="userSpaceOnUse"
+                                    x1="45.2446" y1="-9.5483" x2="108.0998"
+                                    y2="53.3068">
+                        <stop offset="0" stop-color="#B84E51"></stop>
+                        <stop offset="1" stop-color="#F68E48"></stop>
+                    </linearGradient>
+                    <linearGradient id="logo-gradient-6" gradientUnits="userSpaceOnUse"
+                                    x1="6.6323" y1="64.3193" x2="49.6788" y2="107.3658">
+                        <stop offset="0" stop-color="#F9A03C"></stop>
+                        <stop offset="1" stop-color="#F7974E"></stop>
+                    </linearGradient>
+                    <path fill="url(#logo-gradient-1)"
+                          d="M95.82,65.857c0.043-0.418,0.074-0.84,0.098-1.264c0.029-0.502-30.211-29.194-30.211-29.194h-0.723C64.984,35.399,95.635,67.73,95.82,65.857z"></path>
+                    <path fill="url(#logo-gradient-2)"
+                          d="M31.302,55.904c-0.04,0.088-0.08,0.176-0.121,0.264c-0.043,0.092-0.087,0.184-0.131,0.275c-0.964,2.01,13.495,16.145,14.658,14.428c0.053-0.076,0.106-0.156,0.159-0.232c0.059-0.09,0.117-0.176,0.175-0.266C46.972,68.961,31.715,54.986,31.302,55.904z"></path>
+                    <path fill="url(#logo-gradient-3)"
+                          d="M51.734,75.781c-0.041,0.09-0.332,0.582-0.598,0.842c-0.045,0.09,14.115,14.133,14.115,14.133h1.275C66.527,90.756,53.234,76.375,51.734,75.781z"></path>
+                    <path fill="url(#logo-gradient-4)"
+                          d="M95.938,64.338c-0.662,14.68-12.807,26.418-27.645,26.418h-2.006L51.469,76.158c1.219-1.719,2.352-3.5,3.361-5.357h13.463c4.258,0,7.723-3.463,7.723-7.723c0-4.258-3.465-7.723-7.723-7.723h-7.967c0.607-3.209,0.939-6.518,0.939-9.903c0-3.437-0.338-6.793-0.967-10.053h4.949l30.604,30.155C95.887,65.15,95.916,64.746,95.938,64.338z M8.05,0H0v19.955h8.05c14.06,0,25.5,11.437,25.5,25.497c0,3.825-0.853,7.456-2.369,10.716l14.686,14.471c4.822-7.215,7.641-15.877,7.641-25.187C53.508,20.39,33.115,0,8.05,0z"></path>
+                    <path fill="url(#logo-gradient-5)"
+                          d="M68.293,0H35.695c7.962,4.861,14.555,11.754,19.047,19.955h13.551c4.258,0,7.723,3.463,7.723,7.723c0,4.259-3.465,7.722-7.723,7.722h-3.045l30.604,30.155c0.072-0.818,0.117-1.641,0.117-2.477c0-6.727-2.414-12.898-6.422-17.701c4.008-4.801,6.422-10.973,6.422-17.699C95.969,12.417,83.555,0,68.293,0z"></path>
+                    <path fill="url(#logo-gradient-6)"
+                          d="M66.287,90.756H35.928C42.039,86.982,47.322,82,51.469,76.158L66.287,90.756z M45.867,70.639L31.182,56.168C27.125,64.887,18.284,70.951,8.05,70.951H0v19.953h8.05C23.804,90.904,37.709,82.846,45.867,70.639z"></path>
+                </svg>
+            </div>
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    OUTLINE
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
 
             <div class="step clarify" data-x="-2400" data-y="1000" data-z="0">
                 <h2>Outline</h2>
             </div>
 
             <div class="step" data-x="-2300" data-y="1150" data-z="-100">
-                SVG
+                <h3>Scalable Vector Graphics</h3>
             </div>
 
             <div class="step" data-x="-2300" data-y="1250" data-z="-100">
-                D3
+                <h3>Data Driven Documents</h3>
             </div>
 
-            <div class="step" data-x="-2200" data-y="1333" data-z="-200">
-                SVG
+            <div class="step" data-x="-2250" data-y="1350" data-z="-200">
+                <h4>Drawing</h4>
             </div>
 
-            <div class="step" data-x="-2200" data-y="1400" data-z="-200">
-                Data
+            <div class="step" data-x="-2250" data-y="1425" data-z="-200">
+                <h4>Transitions</h4>
             </div>
 
-            <div class="step" data-x="-2300" data-y="1500" data-z="-100">
-                Something else
+            <div class="step" data-x="-2250" data-y="1500" data-z="-200">
+                <h4>Data</h4>
             </div>
 
-        <!-- Zoom Out -->
-
-            <div class="step">
-                SVG is more important than ever.
-
-                1. Because of multiple display sizes
-                    a. Mobile and handheld devices
-                    b. High pixel density displays
-                2. Because, like HTML, they are document based
-                    a. They can be edited like HTML
-                        i. for changing color
-                        ii. for transitioning attributes
-                    b. They can be styled like HTML using CSS
-
+            <div class="step" data-x="-2300" data-y="1600" data-z="-100">
+                <h3>Something else</h3>
             </div>
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    SCALABLE VECTOR GRAPHICS
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+
+            <div class="step clarify" data-x="-1200" data-y="1000" data-z="0">
+                <h2>SVG</h2>
+            </div>
+
+            <div class="step" data-x="-1100" data-y="1150" data-z="-100">
+                <h3>Display Variance</h3>
+            </div>
+
+            <div class="step" data-x="-1050" data-y="1250" data-z="-200">
+                <h4>Mobile Devices &amp; Large Monitors</h4>
+            </div>
+
+            <div class="step" data-x="-1050" data-y="1325" data-z="-200">
+                <h4>High Pixel Density Displays</h4>
+            </div>
+
+            <div class="step" data-x="-1100" data-y="1425" data-z="-100">
+                <h3>Document Based</h3>
+            </div>
+
+            <div class="step" data-x="-1050" data-y="1525" data-z="-200">
+                <h4>Selecting</h4>
+            </div>
+
+            <div class="step" data-x="-1050" data-y="1600" data-z="-200">
+                <h4>Maniplulation (color, opacity)</h4>
+            </div>
+
+            <div class="step" data-x="-1050" data-y="1675" data-z="-200">
+                <h4>Transitions</h4>
+            </div>
+
+            <div class="step invisible slide huge skip"
+                 data-x="-1050" data-y="1900" data-z="0" data-scale=".3"
+                 data-focus-id="performance">
+                Images can easily be embedded and cached within pages reducing
+                the number of HTTP requests that must be made.
+            </div>
+
+            <div id="performance" class="step"
+                 data-x="-1050" data-y="1750" data-z="-200"
+                 data-focus="performance">
+                <h4>Page Performance</h4>
+            </div>
+
+            <div class="step" data-x="-1100" data-y="1850" data-z="-100">
+                <h3>Easily Styled</h3>
+            </div>
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    DATA DRIVEN DOCUMENTS
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+
+            <div class="step clarify" data-x="0" data-y="1000" data-z="0">
+                <h2>D3</h2>
+            </div>
+
+            <!-- - - - - -
+                DEMO 01
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1150" data-z="-100">
+                <h3>Shapes</h3>
+            </div>
+
+            <div id="demo01" class="step invisible demo"
+                 data-x="300" data-y="1150" data-z="101" data-scale=".1"
+                 data-group="demo01">
+            </div>
+
+            <div class="step invisible"
+                 data-x="240" data-y="1180" data-z="100" data-scale=".2"
+                 data-group="demo01">
+                <pre class="prettyprint">
+var svg = d3.select('#demo01')
+        .append('svg')
+        .attr('width', 500)
+        .attr('height', 500);
+
+svg.append('rect')
+        .attr('x', 5)
+        .attr('y', 5)
+        .attr('width', 490)
+        .attr('height', 490)
+        .style('stroke', 'gray')
+        .style('stroke-width', 10)
+        .style('fill', 'whitesmoke');
+
+svg.append('circle')
+        .attr('r', 200)              // Radius
+        .attr('cx', 250)             // Center X Coordinate
+        .attr('cy', 250)             // Center Y Coordinate
+        .style('stroke', 'gray')
+        .style('stroke-width', 10)
+        .style('fill', 'white');
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="258" data-y="1125" data-z="100" data-scale=".2"
+                 data-group="demo01">
+                <div class="focus-box"
+                     style="height: 40px; width: 340px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="258" data-y="1131" data-z="100" data-scale=".2"
+                 data-group="demo01">
+                <div class="focus-box"
+                     style="height: 40px; width: 340px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="258" data-y="1136" data-z="100" data-scale=".2"
+                 data-group="demo01">
+                <div class="focus-box"
+                     style="height: 40px; width: 340px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="258" data-y="1178" data-z="100" data-scale=".2"
+                 data-group="demo01">
+                <div class="focus-box"
+                     style="height: 40px; width: 380px"></div>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 02
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1250" data-z="-100">
+                <h3>CSS</h3>
+            </div>
+
+            <div id="demo02" class="step invisible demo"
+                 data-x="500" data-y="1250" data-z="101" data-scale=".1"
+                 data-group="demo02">
+            </div>
+
+            <div class="step invisible"
+                 data-x="440" data-y="1280" data-z="100" data-scale=".2"
+                 data-group="demo02">
+                <pre class="prettyprint">
+var svg = d3.select('#demo02')
+        .append('svg')
+        .attr('width', 500)
+        .attr('height', 500);
+
+svg.append('rect')
+        .attr('x', 5)
+        .attr('y', 5)
+        .attr('width', 490)
+        .attr('height', 490);
+<span class="omitted">        .style('stroke', 'gray')
+        .style('stroke-width', 10)
+        .style('fill', 'whitesmoke');</span>
+
+svg.append('circle')
+        .attr('r', 200)
+        .attr('cx', 250)
+        .attr('cy', 250);
+<span class="omitted">        .style('stroke', 'gray')
+        .style('stroke-width', 10)
+        .style('fill', 'white');</span>
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="458" data-y="1304" data-z="100" data-scale=".2"
+                 data-group="demo02">
+                <div class="focus-box"
+                     style="height: 92px; width: 400px"></div>
+                <div style="height: 115px"></div>
+                <div class="focus-box"
+                     style="height: 92px; width: 400px"></div>
+            </div>
+
+            <div class="step invisible"
+                 data-x="640" data-y="1280" data-z="100" data-scale=".2"
+                 data-group="demo02">
+                <pre class="prettyprint">
+svg {
+    stroke: gray;
+    stroke-width: 10;
+}
+
+rect {
+    fill: whitesmoke;
+}
+
+circle {
+    fill: white;
+}
+                </pre>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 03
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1350" data-z="-100">
+                <h3>On</h3>
+            </div>
+
+            <div id="demo03" class="step invisible demo"
+                 data-x="300" data-y="1350" data-z="101" data-scale=".1"
+                 data-group="demo03">
+            </div>
+
+            <div class="step invisible"
+                 data-x="240" data-y="1380" data-z="100" data-scale=".2"
+                 data-group="demo03">
+                <pre class="prettyprint">
+var svg = d3.select('#demo03')
+        .append('svg')
+        .attr('width', 500)
+        .attr('height', 500);
+
+svg.append('rect')
+        .attr('x', 5)
+        .attr('y', 5)
+        .attr('width', 490)
+        .attr('height', 490);
+
+svg.append('circle')
+        .attr('r', 200)
+        .attr('cx', 250)
+        .attr('cy', 250)
+        .on('mouseover', over)
+        .on('mouseout', out);
+
+function over() {
+    d3.select(this).style('opacity', 0);
+}
+
+function out() {
+    d3.select(this).style('opacity', 1);
+}
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="236" data-y="1418" data-z="100" data-scale=".2"
+                 data-group="demo03">
+                <div class="focus-box"
+                     style="height: 280px; width: 600px"></div>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 04
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1450" data-z="-100">
+                <h3>Transition</h3>
+            </div>
+
+            <div id="demo04" class="step invisible demo"
+                 data-x="500" data-y="1450" data-z="101" data-scale=".1"
+                 data-group="demo04" data-focus-id="demo04">
+            </div>
+
+            <div class="step invisible"
+                 data-x="440" data-y="1480" data-z="100" data-scale=".2"
+                 data-group="demo04" data-focus-id="demo04">
+                <pre class="prettyprint">
+var svg = d3.select('#demo04')
+        .append('svg')
+        .attr('width', 500)
+        .attr('height', 500);
+
+svg.append('rect')
+        .attr('x', 5)
+        .attr('y', 5)
+        .attr('width', 490)
+        .attr('height', 490);
+
+svg.append('circle')
+        .attr('r', 200)
+        .attr('cx', 250)
+        .attr('cy', 250)
+        .on('mousedown', down);
+
+function down() {
+    d3.select(this)
+        .transition()
+            .duration(200)
+            .attr('r', 150)
+        .transition()
+            .delay(200)
+            .attr('r', 200);
+}
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="432" data-y="1518" data-z="100" data-scale=".2"
+                 data-group="demo04" data-focus-id="demo04">
+                <div class="focus-box"
+                     style="height: 310px; width: 540px"></div>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 05
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1550" data-z="-100">
+                <h3>Each End</h3>
+            </div>
+
+            <div id="demo05" class="step invisible demo"
+                 data-x="300" data-y="1550" data-z="101" data-scale=".1"
+                 data-group="demo05">
+            </div>
+
+            <div class="step invisible"
+                 data-x="240" data-y="1580" data-z="100" data-scale=".2"
+                 data-group="demo05">
+                <pre class="prettyprint">
+var svg = d3.select('#demo05')
+        .append('svg')
+        .attr('width', 500)
+        .attr('height', 500);
+
+svg.append('rect')
+        .attr('x', 5)
+        .attr('y', 5)
+        .attr('width', 490)
+        .attr('height', 490);
+
+svg.append('circle')
+        .attr('r', 200)
+        .attr('cx', 250)
+        .attr('cy', 250)
+        .on('mousedown', down);
+
+function down() {
+    d3.select(this)                 // Select may return many
+        .transition()
+            .attr('r', 150)
+            .each('end', up);       // For each transition end
+}                                   // .each('start', cb)
+                                    //     follows .delay()
+function up() {
+    d3.select(this)
+        .transition()               // No delay necessary
+            .attr('r', 200);
+}
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="248" data-y="1617" data-z="100" data-scale=".2"
+                 data-group="demo05">
+                <div class="focus-box"
+                     style="height: 380px; width: 840px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="432" data-y="1518" data-z="100" data-scale=".2"
+                 data-group="demo05" data-focus="demo04">
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="248" data-y="1617" data-z="100" data-scale=".2"
+                 data-group="demo05">
+                <div class="focus-box"
+                     style="height: 380px; width: 840px"></div>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 06
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1650" data-z="-100">
+                <h3>Computed</h3>
+            </div>
+
+            <div id="demo06" class="step invisible demo"
+                 data-x="500" data-y="1650" data-z="101" data-scale=".1"
+                 data-group="demo06" data-focus-id="demo06">
+            </div>
+
+            <div class="step invisible"
+                 data-x="440" data-y="1680" data-z="100" data-scale=".2"
+                 data-group="demo06" data-focus-id="demo06">
+                <pre class="prettyprint">
+var svg = d3.select('#demo06')
+        ...
+
+svg.append('circle')
+        .attr('r', 200)
+        .attr('cx', 250)
+        .attr('cy', 250)
+        .on('mousedown', down);
+
+function down() {
+    d3.select(this)
+        .transition()
+            .attr('r', 150)          // To 150 from 200
+            .style('fill', 'gray')   // To gray from ?
+            .each('end', up);
+}
+
+function up() {
+    d3.select(this)
+        .transition()
+            .attr('r', 200)          // To 200 from 150
+            .style('fill', 'white'); // To white from gray
+}
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="462" data-y="1688" data-z="100" data-scale=".2"
+                 data-group="demo06">
+                <div class="focus-box"
+                     style="height: 40px; width: 700px"></div>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 07
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1750" data-z="-100">
+                <h3>Ease</h3>
+            </div>
+
+            <div id="demo07" class="step invisible demo"
+                 data-x="300" data-y="1750" data-z="101" data-scale=".1"
+                 data-group="demo07">
+            </div>
+
+            <div class="step invisible"
+                 data-x="240" data-y="1780" data-z="100" data-scale=".2"
+                 data-group="demo07">
+                <pre class="prettyprint">
+var demo07 = d3.select('#demo07')
+        ...
+
+demo07.append('circle')
+        ...
+        .on('mousedown', down);
+
+function down() {
+    d3.select(this)
+            .transition()
+            .attr('r', 150)
+            .style('fill', 'gray')
+            .ease('out')
+            .each('end', up);
+}
+
+function up() {
+    d3.select(this)
+            .transition()
+            .attr('r', 200)
+            .style('fill', 'white')
+            .ease('in');
+}
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="262" data-y="1806" data-z="100" data-scale=".2"
+                 data-group="demo07">
+                <div class="focus-box"
+                     style="height: 40px; width: 300px"></div>
+                <div style="height: 192px; width: 300px"></div>
+                <div class="focus-box"
+                     style="height: 40px; width: 300px"></div>
+            </div>
+
+            <div class="step invisible"
+                 data-x="440" data-y="1680" data-z="100" data-scale=".2"
+                 data-group="demo07" data-focus="demo06">
+            </div>
+
+            <div class="step invisible"
+                 data-x="240" data-y="1780" data-z="100" data-scale=".2"
+                 data-group="demo07">
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 08
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1850" data-z="-100">
+                <h3>Tween</h3>
+            </div>
+
+            <div id="demo08" class="step invisible demo"
+                 data-x="500" data-y="1850" data-z="101" data-scale=".1"
+                 data-group="demo08" data-focus-id="demo08">
+            </div>
+
+            <div class="step invisible"
+                 data-x="440" data-y="1880" data-z="100" data-scale=".2"
+                 data-group="demo08" data-focus-id="demo08">
+                <pre class="prettyprint">
+...
+function demo08down() {
+    d3.select(this)
+        .transition()
+        .attr('r', 150)
+        .style('fill', 'gray')
+        .each('end', up);
+    d3.select('#text')
+        .transition()
+        .tween("text", toColor('gray'));
+}
+
+function up() {
+    d3.select(this)
+        .transition()
+        .attr('r', 200)
+        .style('fill', 'white');
+    d3.select('#text')
+        .transition()
+        .tween("text", toColor('white'));
+}
+
+function toColor(color) {
+    return function() {
+        var i = d3.interpolate(this.textContent, color);
+        return function(t) {
+            this.textContent = i(t);
+        };
+    }
+}
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="442" data-y="1844" data-z="100" data-scale=".2"
+                 data-group="demo08">
+                <div class="focus-box"
+                     style="height: 92px; width: 540px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="436" data-y="1934" data-z="100" data-scale=".2"
+                 data-group="demo08">
+                <div class="focus-box"
+                     style="height: 230px; width: 760px"></div>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 09
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="1950" data-z="-100">
+                <h3>Data</h3>
+            </div>
+
+            <div id="demo09" class="step invisible demo"
+                 data-x="385" data-y="1981" data-z="101" data-scale=".25"
+                 data-group="demo09">
+            </div>
+
+            <div class="step invisible"
+                 data-x="240" data-y="1980" data-z="100" data-scale=".2"
+                 data-group="demo09">
+                <pre class="prettyprint">
+var dataset = [16, 24, 32, 40, 48];
+        ...
+
+demo09.append('rect')
+        ...
+        .on('mousedown', fix);
+
+demo09.append('circle')
+        .attr('r', 40)
+        .attr('cx', 50)
+        .attr('cy', 50);
+
+demo09.append('circle')
+        .attr('r', 40)
+        .attr('cx', 50)
+        .attr('cy', 150);
+
+function fix() {
+    demo09.selectAll('circle')
+            .data(dataset)
+        .transition()
+            .attr('r', function(d) {return d})
+            .attr('cx', 50)
+            .attr('cy', function(d, i) {
+                return 50 + (i * 100);
+            });
+}
+                </pre>
+            </div>
+
+            <div class="step invisible skip slide x-large"
+                 data-x="304" data-y="2050" data-z="102" data-scale=".08"
+                 data-group="demo09" data-focus-id="demo09"><br>
+                Attributes can take either a static value or a function that
+                    receives the dataset value (datum) and dataset index.
+                    This function is commonly used to set layout, size or
+                    color based on the associated data.
+             </div>
+
+            <div class="step invisible nostay"
+                 data-x="265" data-y="2009" data-z="100" data-scale=".2"
+                 data-group="demo09">
+                <div class="focus-box"
+                     style="height: 40px; width: 300px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="258" data-y="2030" data-z="100" data-scale=".2"
+                 data-group="demo09" data-focus="demo09">
+                <div class="focus-box"
+                     style="height: 140px; width: 600px"></div>
+            </div>
+
+
+
+            <!-- - - - - -
+                DEMO 10
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="2050" data-z="-100">
+                <h3>Enter</h3>
+            </div>
+
+            <div id="demo10" class="step invisible demo"
+                 data-x="585" data-y="1981" data-z="101" data-scale=".25"
+                 data-group="demo10">
+            </div>
+
+            <div class="step invisible"
+                 data-x="440" data-y="1980" data-z="100" data-scale=".2"
+                 data-group="demo10">
+                <pre class="prettyprint">
+var dataset = [16, 24, 32, 40, 48];
+        ...
+
+svg.append('rect')
+        ...
+        .on('mousedown', fix);
+
+svg.append('circle')
+        .attr('r', 40)
+        .attr('cx', 50)
+        .attr('cy', 50);
+
+svg.append('circle')
+        .attr('r', 40)
+        .attr('cx', 50)
+        .attr('cy', 150);
+
+function fix() {
+    svg.selectAll('circle')
+            .data(dataset)
+        .enter().append('circle')
+            .attr('r', function(d) {return d})
+            .attr('cx', 50)
+            .attr('cy', function(d, i) {
+                return 50 + (i * 100)
+            });
+}
+                </pre>
+            </div>
+
+            <div class="step invisible skip slide large"
+                 data-x="504" data-y="2050" data-z="102" data-scale=".08"
+                 data-group="demo10" data-focus-id="demo10"><br>
+                <p>Enter is strange<br/>(comes from stage terminology)</p>
+                <br/>
+                <ol>
+                    <li>It creates a new chain because it returns an enter object and not
+                        the original selection</li>
+                    <li>For every piece of data that exists in the dataset the chained
+                        functions are run.  Because they are chained to the enter object
+                        and not the selection they only run on objects "entering the stage"</li>
+                </ol>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="455" data-y="2014" data-z="100" data-scale=".2"
+                 data-group="demo10">
+                <div class="focus-box"
+                     style="height: 40px; width: 400px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="458" data-y="2030" data-z="100" data-scale=".2"
+                 data-group="demo10" data-focus="demo10">
+                <div class="focus-box"
+                     style="height: 140px; width: 600px"></div>
+            </div>
+
+
+
+            <!-- - - - - -
+                DEMO 11
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="2150" data-z="-100">
+                <h3>Data Transition</h3>
+            </div>
+
+            <div id="demo11" class="step invisible demo"
+                 data-x="385" data-y="2181" data-z="101" data-scale=".25"
+                 data-group="demo11">
+            </div>
+
+            <div class="step invisible"
+                 data-x="240" data-y="2180" data-z="100" data-scale=".2"
+                 data-group="demo11">
+                <pre class="prettyprint">
+var dataset = [16, 24, 32, 40, 48];
+        ...
+demo11.append('rect')
+      ...on('mousedown', dataBind);
+
+demo11.append('circle')
+        .attr('r', 32)...;
+
+demo11.append('circle')
+        .attr('r', 32)...;
+
+function dataBind() {
+    demo11.selectAll('circle')
+            .data(dataset)
+            .enter().append('circle');
+    redraw();
+}
+
+function redraw() {
+    demo11.selectAll('circle')
+            .data(dataset)
+        .transition()
+            .duration(750)
+            .attr('r', function(d) { return d })
+            .attr('cx', 50)
+            .attr('cy', function(d, i) {
+                    return 50 + (i * 100)
+            });
+}
+                </pre>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="240" data-y="2175" data-z="100" data-scale=".2"
+                 data-group="demo11" data-focus="demo09">
+                <div class="focus-box"
+                     style="height: 134px; width: 600px"></div>
+            </div>
+
+            <div class="step invisible nostay"
+                 data-x="254" data-y="2227" data-z="100" data-scale=".2"
+                 data-group="demo11" data-focus="demo09">
+                <div class="focus-box"
+                     style="height: 214px; width: 600px"></div>
+            </div>
+
+
+            <!-- - - - - -
+                DEMO 12
+            - - - - - - -->
+
+            <div class="step" data-x="100" data-y="2250" data-z="-100">
+                <h3>Real Data</h3>
+            </div>
+
+            <div id="demo12" class="step invisible demo"
+                 data-x="585" data-y="2181" data-z="101" data-scale=".25"
+                 data-group="demo12">
+            </div>
+
+
 
             <div class="step invisible" data-x="0" data-y="0" data-z="5000">
             </div>
 
-		</div>
-    <script type="text/javascript" src="js/impress.js"></script>
-    <script>
-    	var el = document.getElementById("impress");
-    	impress().init();
+        </div>
+        <script type="text/javascript" src="js/impress.js"></script>
+        <script>
+            var el = document.getElementById("impress");
+            impress().init();
 
-    	var timer;
-    	var focusList = [];
-    	var $help = $('.help');
-    	var activeGroup;
+            var timer;
+            var focusList = [];
+            var $help = $('.help');
+            var activeGroup;
 
-    	el.addEventListener("impress:stepenter", function (event) {
-    		setTimeout(function() {
-	    		var $evt = $(event.target);
-	    		var focus = $evt.attr('data-focus');
-	    		if (focus) {
-	    			var $target = $('.focus[data-focus-id="' + focus + '"]');
-	    			if ($target[0]) {
-		    			$target.addClass('clarify');
-		    			focusList.push($target);
-	    			}
-	    		}
-	    		var onenter = $evt.attr('data-onenter');
-	    		if (window[onenter]) window[onenter]();
-    		}, 200);
-        }, false);
+            el.addEventListener("impress:stepenter", function(event) {
+                setTimeout(function() {
+                    var $evt = $(event.target);
 
-    	el.addEventListener("impress:stepleave", function (event) {
-    		setTimeout(function() {
-	    		var $evt = $(event.target);
-	    		
-	    		var stay = $evt.attr('data-stay');
-	    		if (stay) {
-	    			$evt.addClass('stay');
-	    		}
+                    var focus = $evt.attr('data-focus');
+                    if (focus) {
+                        var $target = $('[data-focus-id="' + focus + '"]');
+                        if ($target[0]) {
+                            $target.addClass('clarify');
+                            focusList.push($target);
+                        }
+                    }
 
-	    		// Group Stuff
-	    		var group = $evt.attr('data-group');
-	    		if (group) {
-		    		if (activeGroup) {
-		    			if (activeGroup === group) {
-		    				$evt.addClass('stay');
-		    			}
-		    			else {
-		    				$('[data-group="' + activeGroup + '"]').removeClass('stay');
-		    			}
-		    		}
-		    		else {
-		    			activeGroup = group;
-		    			$evt.addClass('stay');
-		    		}
-	    		}
-	    		else if (activeGroup) {
-					$('[data-group="' + activeGroup + '"]').removeClass('stay')
-	    		}
+                    // Group Stuff
+                    var group = $evt.attr('data-group');
+                    if (group) {
+                        if (activeGroup) {
+                            if (activeGroup !== group) {
+                                $('[data-group="' + activeGroup + '"]').removeClass('stay');
+                                activeGroup = group;
+                            }
+                        }
+                        else {
+                            activeGroup = group;
+                        }
+                    }
+                    else {
+                        if (activeGroup) {
+                            $('[data-group="' + activeGroup + '"]').removeClass('stay');
+                            activeGroup = null;
+                        }
+                    }
 
-	    		for (var i = 0, cnt = focusList.length; i < cnt; i++) {
-	    			focusList[i].removeClass('clarify');
-	    		}
-	    		focusList = [];
-
-	    		var onleave = $evt.attr('data-onleave');
-	    		if (window[onleave]) window[onleave]();
-	    	}, 200);
-        }, false);
-
-    	function onGuidedEnter() {
-    		timer = setTimeout(function() {
-	    		$help.addClass('show');
-    		}, 3000);
-    	}
-    	function onGuidedLeave() {
-    		clearTimeout(timer);
-			$help.removeClass('show');
-    	}
-
-    	function playVid() {
-            var video = document.getElementById('video');
-            video.addEventListener('canplay', function(e) {
-                this.play();
+                    var onenter = $evt.attr('data-onenter');
+                    if (window[onenter]) window[onenter]();
+                }, 200);
             }, false);
-        }
 
-    	function dark() {
-    		setTimeout(function() {
-	    		$('body').addClass('dark').removeClass('cloudy');
-    		}, 1);
-    	}
+            el.addEventListener("impress:stepleave", function(event) {
+                setTimeout(function() {
+                    var $evt = $(event.target);
 
-    </script>
+                    var stay = $evt.attr('data-stay');
+                    if (stay) {
+                        $evt.addClass('stay');
+                    }
+
+                    // Group Stuff
+                    var group = $evt.attr('data-group');
+                    if (group) {
+                        if (activeGroup && activeGroup === group) {
+                            if (!$evt.hasClass('nostay'))
+                                $evt.addClass('stay');
+                        }
+                    }
+
+                    for (var i = 0, cnt = focusList.length; i < cnt; i++) {
+                        focusList[i].removeClass('clarify');
+                    }
+                    focusList = [];
+
+                    var onleave = $evt.attr('data-onleave');
+                    if (window[onleave]) window[onleave]();
+                }, 200);
+            }, false);
+
+            function onGuidedEnter() {
+                timer = setTimeout(function() {
+                    $help.addClass('show');
+                }, 3000);
+            }
+            function onGuidedLeave() {
+                clearTimeout(timer);
+                $help.removeClass('show');
+            }
+
+            function playVid() {
+                var video = document.getElementById('video');
+                video.addEventListener('canplay', function(e) {
+                    this.play();
+                }, false);
+            }
+
+            function dark() {
+                setTimeout(function() {
+                    $('body').addClass('dark').removeClass('cloudy');
+                }, 1);
+            }
+
+            // -----------------------------------------------------------------
+            //    --- DEMOS ---
+            // -----------------------------------------------------------------
+
+
+            // --- DEMO 01 ---
+
+            var demo01 = d3.select('#demo01')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            demo01.append('rect')
+                    .attr('x', 5)                // Upper Left X Coordinate
+                    .attr('y', 5)                // Upper Left Y Coordinate
+                    .attr('width', 490)          // Width
+                    .attr('height', 490)         // Height
+                    .style('stroke', 'gray')
+                    .style('stroke-width', 10)
+                    .style('fill', 'whitesmoke');
+
+            demo01.append('circle')
+                    .attr('r', 200)              // Radius
+                    .attr('cx', 250)             // Center X Coordinate
+                    .attr('cy', 250)             // Center Y Coordinate
+                    .style('stroke', 'gray')
+                    .style('stroke-width', 10)
+                    .style('fill', 'white');
+
+
+            // --- DEMO 02 ---
+
+            var demo02 = d3.select('#demo02')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            demo02.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 490)
+                    .attr('height', 490);
+
+            demo02.append('circle')
+                    .attr('r', 200)              // Radius
+                    .attr('cx', 250)             // Center X Coordinate
+                    .attr('cy', 250);            // Center Y Coordinate
+
+
+            // --- DEMO 03 ---
+
+            var demo03 = d3.select('#demo03')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            demo03.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 490)
+                    .attr('height', 490);
+
+            demo03.append('circle')
+                    .attr('r', 200)
+                    .attr('cx', 250)
+                    .attr('cy', 250)
+                    .on('mouseover', demo03over)
+                    .on('mouseout', demo03out);
+
+            function demo03over() {
+                d3.select(this).style('opacity', 0);
+            }
+
+            function demo03out() {
+                d3.select(this).style('opacity', 1);
+            }
+
+
+            // --- DEMO 04 ---
+
+            var demo04 = d3.select('#demo04')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            demo04.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 490)
+                    .attr('height', 490);
+
+            demo04.append('circle')
+                    .attr('r', 200)
+                    .attr('cx', 250)
+                    .attr('cy', 250)
+                    .on('mousedown', demo04down);
+
+            function demo04down() {
+                d3.select(this)
+                    .transition()
+                        .duration(200)
+                        .attr('r', 150)
+                    .transition()
+                        .delay(200)
+                        .attr('r', 200);
+            }
+
+
+            // --- DEMO 05 ---
+
+            var demo05 = d3.select('#demo05')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            demo05.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 490)
+                    .attr('height', 490);
+
+            demo05.append('circle')
+                    .attr('r', 200)
+                    .attr('cx', 250)
+                    .attr('cy', 250)
+                    .on('mousedown', demo05down);
+
+            function demo05down() {
+                d3.select(this)                 // Remember select can return many
+                        .transition()
+                        .attr('r', 150)
+                        .each('end', demo05up); // Each transition end calls up()
+            }                                   // .each('start', cb) runs after delays
+
+            function demo05up() {
+                d3.select(this)
+                        .transition()           // No delay necessary
+                        .attr('r', 200);
+            }
+
+
+            // --- DEMO 06 ---
+
+            var demo06 = d3.select('#demo06')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            demo06.append('rect')
+                    .attr('x', 5)               // Upper Left X Coordinate
+                    .attr('y', 5)               // Upper Left Y Coordinate
+                    .attr('width', 490)          // Width
+                    .attr('height', 490);        // Height
+
+            demo06.append('circle')
+                    .attr('r', 200)              // Radius
+                    .attr('cx', 250)             // Center X Coordinate
+                    .attr('cy', 250)             // Center Y Coordinate
+                    .on('mousedown', demo06down);
+
+            function demo06down() {
+                d3.select(this)                 // Remember select can return many
+                        .transition()
+                        .attr('r', 150)
+                        .style('fill', 'gray')  // Transition to gray from computed
+                        .each('end', demo06up);
+            }
+
+            function demo06up() {
+                d3.select(this)
+                        .transition()               // No delay necessary
+                        .attr('r', 200)
+                        .style('fill', 'white');// Transition to white from gray
+            }
+
+
+            // --- DEMO 07 ---
+
+            var demo07 = d3.select('#demo07')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            demo07.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 490)
+                    .attr('height', 490);
+
+            demo07.append('circle')
+                    .attr('r', 200)
+                    .attr('cx', 250)
+                    .attr('cy', 250)
+                    .on('mousedown', demo07down);
+
+            function demo07down() {
+                d3.select(this)
+                        .transition()
+                        .attr('r', 150)
+                        .style('fill', 'gray')
+                        .ease('out')
+                        .each('end', demo07up);
+            }
+
+            function demo07up() {
+                d3.select(this)
+                        .transition()
+                        .attr('r', 200)
+                        .style('fill', 'white')
+                        .ease('in');
+            }
+
+
+            // --- DEMO 08 ---
+
+
+            var demo08 = d3.select('#demo08')
+                    .append('svg')
+                    .attr('width', 500)
+                    .attr('height', 500);
+
+            var demo08text = d3.select('#demo08')
+                    .append('div')
+                    .attr('id', 'demo08text')
+                    .text('#ffffff');
+
+            demo08.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 490)
+                    .attr('height', 490);
+
+            demo08.append('circle')
+                    .attr('r', 200)
+                    .attr('cx', 250)
+                    .attr('cy', 250)
+                    .on('mousedown', demo08down);
+
+            function demo08down() {
+                d3.select(this)
+                        .transition()
+                        .attr('r', 150)
+                        .style('fill', 'gray')
+                        .ease('out')
+                        .each('end', demo08up);
+                d3.select('#demo08text')
+                        .transition()
+                        .tween("text", demo08toColor('gray'));
+            }
+
+            function demo08up() {
+                d3.select(this)
+                        .transition()
+                        .attr('r', 200)
+                        .style('fill', 'white')
+                        .ease('in');
+                d3.select('#demo08text')
+                        .transition()
+                        .tween("text", demo08toColor('white'));
+            }
+
+            function demo08toColor(color) {
+                return function() {
+                    var i = d3.interpolate(this.textContent, color);
+                    return function(t) {
+                        this.textContent = i(t);
+                    };
+                }
+            }
+
+
+            // --- DEMO 09 ---
+
+            var demo09dataset = [16, 24, 32, 40, 48];
+
+            var demo09 = d3.select('#demo09')
+                    .append('svg')
+                    .attr('width', 100)
+                    .attr('height', 500);
+
+            demo09.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 90)
+                    .attr('height', 490)
+                    .on('mousedown', demo09fix);
+
+            demo09.append('circle')
+                    .attr('r', 40)
+                    .attr('cx', 50)
+                    .attr('cy', 50);
+
+            demo09.append('circle')
+                    .attr('r', 40)
+                    .attr('cx', 50)
+                    .attr('cy', 150);
+
+            function demo09fix() {
+                demo09.selectAll('circle')
+                        .data(demo09dataset)
+                    .transition()
+                /**
+                 * Attributes can take either a static value or a function
+                 * that receives the dataset value (datum) and dataset index.
+                 * This function is commonly used to set layout, size or
+                 * color based on the associated data.
+                 */
+                        .attr('r', function(d) { return d })
+                        .attr('cx', 50)
+                        .attr('cy', function(d, i) { return 50 + (i * 100) });
+            }
+
+
+            // --- DEMO 10 ---
+
+            var demo10dataset = [16, 24, 32, 40, 48];
+
+            var demo10 = d3.select('#demo10')
+                    .append('svg')
+                    .attr('width', 100)
+                    .attr('height', 500);
+
+            demo10.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 90)
+                    .attr('height', 490)
+                    .on('mousedown', demo10fix);
+
+            demo10.append('circle')
+                    .attr('r', 40)
+                    .attr('cx', 50)
+                    .attr('cy', 50);
+
+            demo10.append('circle')
+                    .attr('r', 40)
+                    .attr('cx', 50)
+                    .attr('cy', 150);
+
+            function demo10fix() {
+                /**
+                 * Enter is strange (comes from stage terminology)
+                 *
+                 * 1. It creates a new chain because it returns an enter object and not
+                 * the original selection
+                 *
+                 * 2. For every piece of data that exists in the dataset the chained
+                 * functions are run.  Because they are chained to the enter object
+                 * and not the selection they only run on objects "entering the stage"
+                 */
+                demo10.selectAll('circle')
+                        .data(demo10dataset)
+                    .enter().append('circle')
+                        .attr('r', function(d) { return d })
+                        .attr('cx', 50)
+                        .attr('cy', function(d, i) { return 50 + (i * 100) });
+            }
+
+
+            // --- DEMO 11 ---
+
+            var demo11dataset = [16, 24, 32, 40, 48];
+
+            var demo11 = d3.select('#demo11')
+                    .append('svg')
+                    .attr('width', 100)
+                    .attr('height', 500);
+
+            demo11.append('rect')
+                    .attr('x', 5)
+                    .attr('y', 5)
+                    .attr('width', 90)
+                    .attr('height', 490)
+                    .on('mousedown', demo11dataBind);
+
+            demo11.append('circle')
+                    .attr('r', 32)
+                    .attr('cx', 50)
+                    .attr('cy', 50);
+
+            demo11.append('circle')
+                    .attr('r', 32)
+                    .attr('cx', 50)
+                    .attr('cy', 150);
+
+            function demo11dataBind() {
+                demo11.selectAll('circle')
+                        .data(demo11dataset)
+                        .enter().append('circle');
+                demo11redraw();
+            }
+
+            function demo11redraw() {
+                demo11.selectAll('circle')
+                        .data(demo11dataset)
+                    .transition()
+                        .duration(750)
+                        .attr('r', function(d) { return d })
+                        .attr('cx', 50)
+                        .attr('cy', function(d, i) {
+                            return 50 + (i * 100)
+                        });
+            }
+
+
+            // --- DEMO 12 ---
+
+            var demo12 = d3.select('#demo12')
+                    .append('svg')
+                    .attr('width', 900)
+                    .attr('height', 515)
+                    .on('mousedown', function() {
+                        demo12dataBind(topYards());
+                    });
+
+            function demo12dataBind(data) {
+                demo12.selectAll('rect')
+                        .data(data)
+                    .enter().append('rect');
+                demo12redraw(data);
+            }
+
+            function demo12redraw(data) {
+                demo12.selectAll('rect')
+                        .data(data)
+                    .transition()
+                        .duration(750)
+                        .attr('x', function(d, i) { return 10 + (i * 32)
+                        })
+                        .attr('y', function(d) { return 505 - (d.value * 6) })
+                        .attr('width', 20)
+                        .attr('height', function(d) { return d.value * 6 });
+            }
+
+
+            // --- Crossfilter ---
+
+
+            var stats;
+            $.ajax({
+                url: '/data/out.json',
+                success: function(data) {
+                    stats = crossfilter(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+
+            function topYards() {
+                var yards = stats.dimension(function(d) {
+                    return Math.max(+d.Passing, +d.Running);
+                });
+
+                var buckets = yards.group(function(yards) {
+                    return yards;
+                });
+
+                return buckets.top(25);
+            }
+        </script>
     </body>
 </html>

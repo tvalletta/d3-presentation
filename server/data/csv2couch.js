@@ -3,18 +3,18 @@
  */
 var        Nano = require('nano');
 var         csv = require('csv');
+var          fs = require('fs');
 var           _ = require('lodash');
 var           Q = require('q');
 
 var args = {};
-
-var nano = Nano(args.url);
-var db = nano.db.use(args.db);
+var nano;
+var db;
 
 function csv2couch() {
   console.log('Loading file: ' + args.file + ' into: ' + args.url + '/' + args.db);
   loadCsv()
-    .then(updateDocDate)
+    .then(writeFile)
     .then(bulkUpdate)
     .then(function() {
       console.log('done');
@@ -25,22 +25,34 @@ function loadCsv() {
   var deferred = Q.defer();
 
   var contents = [];
-  csv()
-    .from.path(f, {
-      columns: true,
-      delimeter: ',',
-      quote: '"'
-    })
-    .on('record', function(row, index) {
-      contents.push(row);
-    })
-    .on('end', function() {
-      deferred.resolve(contents);
-    })
-    .on('error', function(error) {
-      deferred.reject(error);
-    });
+  try {
+    csv()
+      .from.path(__dirname + '/' + args.file, {
+        columns: true,
+        delimeter: ',',
+        quote: '"'
+      })
+      .on('record', function(row, index) {
+        contents.push(row);
+      })
+      .on('end', function() {
+        deferred.resolve(contents);
+      })
+      .on('error', function(error) {
+        deferred.reject(error);
+      });
+  }
+  catch(err) {
+    console.log('stop here');
+  }
+  return deferred.promise;
+}
 
+function writeFile(docs) {
+  var deferred = Q.defer();
+  fs.writeFile(__dirname + '/out.json', JSON.stringify(docs), function(err, x) {
+    deferred.resolve(docs);
+  });
   return deferred.promise;
 }
 
@@ -80,7 +92,9 @@ else {
   args.file = process.argv[2];
   args.url = process.argv[3];
   args.db = process.argv[4];
+
+  nano = Nano(args.url);
+  db = nano.db.use(args.db);
+
   csv2couch();
 }
-
-

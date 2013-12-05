@@ -36,49 +36,37 @@
             .attr('height', 98);
 
     svg.append('circle')
-            .attr('r', 1)
+            .attr('r', 40)
             .attr('cx', 50)
             .attr('cy', 50);
 
     svg.append('circle')
-            .attr('r', 1)
+            .attr('r', 40)
             .attr('cx', 150)
             .attr('cy', 50);
 
-
     function dataBind() {
+        /**
+         * Enter is strange (comes from stage terminology)
+         *
+         * 1. It creates a new chain because it returns an enter object and not
+         * the original selection
+         *
+         * 2. For every piece of data that exists in the dataset the chained
+         * functions are run.  Because they are chained to the enter object
+         * and not the selection they only run on objects "entering the stage"
+         */
         svg.selectAll('circle')
                 .data(dataset)
-            .enter().append('circle');
-
-        redraw();
-        continuous();
-    }
-
-    function redraw() {
-        svg.selectAll('circle')
-                .data(dataset)
-            .transition()
-                .duration(750)
+            .enter().append('circle')
                 .attr('r', function(d) { return 40 * (d / 100) })
                 .attr('cx', function(d, i) { return 50 + (i * 100) })
                 .attr('cy', 50);
     }
 
-    /**
-     * Randomly generate new data and transition the object to the
-     * new data every second
-     */
-    function continuous() {
-        setInterval(function() {
-            for (var i = 0; i < 5; ++i) {
-                dataset[i] = Math.random() * 100;
-            }
-            redraw();
-        }, 1000);
-    }
+    setTimeout(dataBind, 2000);
 
-    setTimeout(dataBind, 1000);
+
 </script>
 </body>
 </html>

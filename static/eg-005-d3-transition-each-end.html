@@ -22,19 +22,19 @@
 <script>
     var svg = d3.select('#demo')
             .append('svg')
-            .attr('width', 100)
-            .attr('height', 100);
+            .attr('width', 500)
+            .attr('height', 500);
 
     svg.append('rect')
-            .attr('x', 1)               // Upper Left X Coordinate
-            .attr('y', 1)               // Upper Left Y Coordinate
-            .attr('width', 98)          // Width
-            .attr('height', 98);        // Height
+            .attr('x', 5)
+            .attr('y', 5)
+            .attr('width', 490)
+            .attr('height', 490);
 
     svg.append('circle')
-            .attr('r', 40)              // Radius
-            .attr('cx', 50)             // Center X Coordinate
-            .attr('cy', 50)             // Center Y Coordinate
+            .attr('r', 200)
+            .attr('cx', 250)
+            .attr('cy', 250)
             .on('mousedown', down);
 
     function down() {
